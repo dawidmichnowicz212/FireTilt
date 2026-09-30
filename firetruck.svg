@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" role="img" aria-label="Wóz strażacki">
+  <defs>
+    <linearGradient id="bodyRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7443f"/>
+      <stop offset="0.5" stop-color="#c51f29"/>
+      <stop offset="1" stop-color="#84111b"/>
+    </linearGradient>
+    <linearGradient id="bodyRedDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b71824"/>
+      <stop offset="1" stop-color="#6d0e17"/>
+    </linearGradient>
+    <linearGradient id="cabRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0534d"/>
+      <stop offset="0.55" stop-color="#c8222e"/>
+      <stop offset="1" stop-color="#8c141e"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#dff5ff"/>
+      <stop offset="0.35" stop-color="#86b8d2"/>
+      <stop offset="1" stop-color="#284b64"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef3f5"/>
+      <stop offset="0.45" stop-color="#aebbc1"/>
+      <stop offset="1" stop-color="#6d7a80"/>
+    </linearGradient>
+    <linearGradient id="shutter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfe5e7"/>
+      <stop offset="1" stop-color="#9ca9ae"/>
+    </linearGradient>
+    <radialGradient id="wheel" cx="50%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#39434a"/>
+      <stop offset="0.55" stop-color="#171d21"/>
+      <stop offset="1" stop-color="#090c0e"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-40%" width="160%" height="190%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="glowBlue" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="rearPanelClip">
+      <rect x="54" y="94" width="277" height="89" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- cień -->
+  <ellipse cx="268" cy="224" rx="228" ry="17" fill="#071015" opacity="0.42" filter="url(#shadow)"/>
+
+  <!-- podwozie -->
+  <path d="M43 180H484L500 193V210H32v-18z" fill="#3c454a"/>
+  <path d="M46 185H483l12 7H38z" fill="#68747a" opacity=".8"/>
+
+  <!-- główny moduł zabudowy -->
+  <path d="M44 87Q44 76 56 76H337v119H44z" fill="url(#bodyRed)" stroke="#681019" stroke-width="5"/>
+  <path d="M55 87h269v92H55z" fill="#a41722" opacity=".28"/>
+
+  <!-- dach i podest pod prądownicę -->
+  <rect x="67" y="65" width="258" height="17" rx="7" fill="#bcc7cc" stroke="#5d686e" stroke-width="4"/>
+  <path d="M82 65V56h65v9m-53-9V48m37 8V48" fill="none" stroke="#6d787e" stroke-width="5" stroke-linecap="round"/>
+  <rect x="216" y="48" width="88" height="17" rx="6" fill="url(#metal)" stroke="#566167" stroke-width="4"/>
+  <ellipse cx="260" cy="47" rx="27" ry="7" fill="#536067"/>
+  <ellipse cx="260" cy="46" rx="20" ry="4.5" fill="#8d9aa0"/>
+
+  <!-- tylne rolety sprzętowe -->
+  <g clip-path="url(#rearPanelClip)">
+    <rect x="54" y="94" width="125" height="79" rx="8" fill="url(#shutter)"/>
+    <rect x="190" y="94" width="134" height="79" rx="8" fill="url(#shutter)"/>
+    <g stroke="#7d8a90" stroke-width="2" opacity=".65">
+      <path d="M54 105h125M54 116h125M54 127h125M54 138h125M54 149h125M54 160h125"/>
+      <path d="M190 105h134M190 116h134M190 127h134M190 138h134M190 149h134M190 160h134"/>
+    </g>
+  </g>
+  <rect x="54" y="94" width="125" height="79" rx="8" fill="none" stroke="#65737a" stroke-width="4"/>
+  <rect x="190" y="94" width="134" height="79" rx="8" fill="none" stroke="#65737a" stroke-width="4"/>
+  <rect x="112" y="128" width="10" height="19" rx="4" fill="#4f5a60"/>
+  <rect x="252" y="128" width="10" height="19" rx="4" fill="#4f5a60"/>
+
+  <!-- kabina -->
+  <path d="M333 92h80q15 0 25 12l43 49q8 9 8 22v20H333z" fill="url(#cabRed)" stroke="#681019" stroke-width="5"/>
+  <path d="M358 104h51q10 0 17 9l28 35h-96z" fill="url(#glass)" stroke="#334b5c" stroke-width="5"/>
+  <path d="M411 106l42 43h-28l-29-43z" fill="#b6d7e8" opacity=".22"/>
+  <path d="M362 156h101v35H362z" fill="#b51c27" opacity=".42"/>
+  <path d="M355 101v90" stroke="#7b121a" stroke-width="4"/>
+  <rect x="438" y="164" width="20" height="7" rx="3.5" fill="#551016"/>
+  <circle cx="474" cy="165" r="7" fill="#ffdba5" stroke="#8a5b2b" stroke-width="3"/>
+  <rect x="472" y="180" width="17" height="9" rx="3" fill="#ecf4f7" stroke="#78858b" stroke-width="2"/>
+
+  <!-- lusterko -->
+  <path d="M451 112l18-13" stroke="#404b50" stroke-width="5" stroke-linecap="round"/>
+  <rect x="467" y="91" width="17" height="13" rx="4" fill="#25343d" stroke="#738087" stroke-width="3"/>
+
+  <!-- pasy odblaskowe -->
+  <path d="M51 170h279" stroke="#ffe45f" stroke-width="7"/>
+  <path d="M51 179h279" stroke="#eceff0" stroke-width="5"/>
+  <path d="M346 176h137" stroke="#ffe45f" stroke-width="7"/>
+  <path d="M346 185h137" stroke="#eceff0" stroke-width="5"/>
+
+  <!-- napis -->
+  <text x="259" y="191" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="1.8">STRAŻ</text>
+  <text x="410" y="182" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">998</text>
+
+  <!-- sprzęt na dachu -->
+  <g stroke="#606d73" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M72 58h92"/>
+    <path d="M77 51h82"/>
+    <path d="M84 45h68"/>
+  </g>
+  <rect x="171" y="57" width="29" height="10" rx="4" fill="#cfd8dc" stroke="#657178" stroke-width="3"/>
+
+  <!-- światła alarmowe -->
+  <g filter="url(#glowBlue)">
+    <rect x="83" y="69" width="22" height="10" rx="5" fill="#2fa8ff" stroke="#d9f4ff" stroke-width="2"/>
+    <rect x="389" y="83" width="24" height="10" rx="5" fill="#2fa8ff" stroke="#d9f4ff" stroke-width="2"/>
+  </g>
+  <rect x="112" y="69" width="15" height="9" rx="4" fill="#ff4f58"/>
+
+  <!-- stopnie i zderzaki -->
+  <rect x="332" y="190" width="163" height="17" rx="6" fill="#5c666b" stroke="#31393d" stroke-width="3"/>
+  <rect x="26" y="188" width="35" height="15" rx="5" fill="url(#metal)" stroke="#58636a" stroke-width="3"/>
+  <rect x="482" y="187" width="28" height="15" rx="5" fill="url(#metal)" stroke="#58636a" stroke-width="3"/>
+  <rect x="373" y="191" width="71" height="8" rx="4" fill="#9ba7ac"/>
+
+  <!-- koła -->
+  <g>
+    <circle cx="123" cy="202" r="37" fill="url(#wheel)" stroke="#59636a" stroke-width="7"/>
+    <circle cx="123" cy="202" r="19" fill="url(#metal)" stroke="#4f5b61" stroke-width="4"/>
+    <circle cx="123" cy="202" r="6" fill="#3c454a"/>
+    <g fill="#535f65">
+      <circle cx="123" cy="188" r="3"/><circle cx="135" cy="195" r="3"/><circle cx="135" cy="209" r="3"/><circle cx="123" cy="216" r="3"/><circle cx="111" cy="209" r="3"/><circle cx="111" cy="195" r="3"/>
+    </g>
+  </g>
+  <g>
+    <circle cx="412" cy="202" r="37" fill="url(#wheel)" stroke="#59636a" stroke-width="7"/>
+    <circle cx="412" cy="202" r="19" fill="url(#metal)" stroke="#4f5b61" stroke-width="4"/>
+    <circle cx="412" cy="202" r="6" fill="#3c454a"/>
+    <g fill="#535f65">
+      <circle cx="412" cy="188" r="3"/><circle cx="424" cy="195" r="3"/><circle cx="424" cy="209" r="3"/><circle cx="412" cy="216" r="3"/><circle cx="400" cy="209" r="3"/><circle cx="400" cy="195" r="3"/>
+    </g>
+  </g>
+
+  <!-- błotniki -->
+  <path d="M80 202a43 43 0 0 1 86 0" fill="none" stroke="#7d1018" stroke-width="11"/>
+  <path d="M369 202a43 43 0 0 1 86 0" fill="none" stroke="#7d1018" stroke-width="11"/>
+
+  <!-- drobne detale -->
+  <rect x="59" y="182" width="19" height="8" rx="3" fill="#ffcd4c"/>
+  <rect x="302" y="182" width="19" height="8" rx="3" fill="#ffcd4c"/>
+  <rect x="341" y="119" width="8" height="34" rx="3" fill="#efc648" opacity=".8"/>
+  <path d="M47 88h282" stroke="#ff7a70" stroke-width="3" opacity=".65"/>
+  <path d="M365 159h92" stroke="#f36b67" stroke-width="2" opacity=".55"/>
+</svg>
