@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#07111c">
+  <title>FireTilt - kontroler</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="controller-page">
+  <div class="orientation-warning">
+    <div class="inner">
+      <span class="icon">📱</span>
+      <h2>Obróć telefon poziomo</h2>
+      <p>Kontroler działa najlepiej w orientacji poziomej.</p>
+    </div>
+  </div>
+
+  <main class="controller-wrap">
+    <section class="controller-panel">
+      <h1>FireTilt</h1>
+      <p>Telefon steruje prądownicą. Trzymaj go poziomo i przechylaj w lewo lub w prawo.</p>
+
+      <div class="controller-status"><span id="statusDot" class="status-dot warn"></span><span id="statusText">Niepołączony</span></div>
+
+      <div class="controller-row">
+        <input id="roomInput" class="room-input" inputmode="numeric" maxlength="4" placeholder="0000" aria-label="Kod gry">
+        <button id="connectBtn" class="ui-btn primary">Połącz</button>
+      </div>
+
+      <div class="controller-actions">
+        <button id="motionBtn" class="ui-btn secondary">Włącz czujniki ruchu</button>
+        <button id="calibrateBtn" class="ui-btn ghost">Wycentruj</button>
+      </div>
+
+      <div id="recalibrateBanner" class="recalibrate-banner">Orientacja telefonu się zmieniła. Ustaw telefon poziomo i naciśnij ponownie <b>Wycentruj</b>.</div>
+      <div id="errorText" class="controller-note"></div>
+
+      <div class="controller-info">
+        <div><strong id="connectionValue">—</strong><span>połączenie</span></div>
+        <div><strong id="sensorValue">—</strong><span>czujnik</span></div>
+        <div><strong id="sendValue">0 Hz</strong><span>wysyłanie</span></div>
+      </div>
+    </section>
+
+    <section class="controller-panel">
+      <div class="gauge">
+        <div class="gauge-center"></div>
+        <div id="gaugeNeedle" class="gauge-needle"></div>
+        <div id="angleValue" class="gauge-angle">0°</div>
+        <div class="gauge-label">← lewo &nbsp;&nbsp;&nbsp; środek &nbsp;&nbsp;&nbsp; prawo →</div>
+      </div>
+      <p>Po wycentrowaniu niewielkie drgania telefonu są filtrowane, żeby sterowanie było płynniejsze.</p>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="js/controller.js"></script>
+</body>
+</html>

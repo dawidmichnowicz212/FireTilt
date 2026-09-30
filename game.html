@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111c">
+  <title>FireTilt - gra</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+  <canvas id="gameCanvas"></canvas>
+
+  <div class="game-ui">
+    <div class="topbar">
+      <div class="game-title">
+        <b>FireTilt</b>
+        <span>Akcja gaśnicza</span>
+      </div>
+      <div class="hud">
+        <div class="hud-box"><small>Czas</small><strong id="timeValue">00:00</strong></div>
+        <div class="hud-box"><small>Pożary</small><strong id="fireValue">6</strong></div>
+        <div class="hud-box"><small>Wynik</small><strong id="scoreValue">0</strong></div>
+        <div class="hud-box"><small>Zagrożenie</small><strong id="threatValue">0%</strong><div class="threat-bar"><div id="threatFill"></div></div></div>
+      </div>
+    </div>
+    <div class="connection"><span id="connectionDot" class="status-dot warn"></span><span id="connectionText">Oczekiwanie na telefon</span></div>
+  </div>
+
+  <section id="pairOverlay" class="overlay">
+    <div class="dialog pair-grid">
+      <div id="qrCode" class="qr-box">Generowanie kodu QR...</div>
+      <div>
+        <div class="eyebrow">Telefon jako kontroler</div>
+        <h1>Zeskanuj kod i połącz telefon</h1>
+        <p>Telefon trzymaj poziomo. Po włączeniu czujników ustaw go wygodnie i naciśnij <b>Wycentruj</b>.</p>
+        <div class="room-line"><span>Kod gry</span><strong id="roomCode">----</strong></div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div>Zeskanuj QR albo otwórz kontroler i wpisz kod.</div></div>
+          <div class="step"><div class="step-num">2</div><div>Na telefonie włącz czujniki ruchu.</div></div>
+          <div class="step"><div class="step-num">3</div><div>Trzymając telefon poziomo naciśnij <b>Wycentruj</b>.</div></div>
+        </div>
+        <div class="dialog-actions">
+          <button id="keyboardModeBtn" class="ui-btn secondary">Tryb testowy z klawiatury</button>
+          <button id="newCodeBtn" class="ui-btn ghost">Wygeneruj nowy kod</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="countdownOverlay" class="overlay hidden"><div id="countNumber" class="count-number">3</div></section>
+
+  <section id="resultOverlay" class="overlay hidden">
+    <div class="dialog result-box">
+      <div class="eyebrow">Koniec akcji</div>
+      <h1 id="resultTitle">Pożar ugaszony</h1>
+      <div id="finalScore" class="result-score">0</div>
+      <p id="resultText">Wszystkie źródła ognia zostały ugaszone.</p>
+      <div class="result-stats">
+        <div class="result-stat"><strong id="finalTime">00:00</strong><span>czas</span></div>
+        <div class="result-stat"><strong id="finalAccuracy">0%</strong><span>celność</span></div>
+        <div class="result-stat"><strong id="finalFires">6/6</strong><span>ugaszone</span></div>
+      </div>
+      <div class="dialog-actions" style="justify-content:center">
+        <button id="restartBtn" class="ui-btn primary">Zagraj ponownie</button>
+        <button id="pairAgainBtn" class="ui-btn secondary">Połącz telefon ponownie</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
